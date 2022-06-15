@@ -16,9 +16,15 @@ preferred_number_of_private_subnets = 4
 
 environment = "dev"
 
-ami = "ami-09d56f8956ab235b3"
+ami-web = "ami-00a45107f7c3455a5"
 
-keypair = "pbb"
+ami-bastion = "ami-0dbc99375eba56ff4"
+
+ami-nginx = "ami-010bd88cc8f5997f3"
+
+ami-sonar = "ami-0f8bd95a744e074b8"
+
+keypair = "pb"
 
 master-password = "devopspblproject"
 
