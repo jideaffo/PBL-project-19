@@ -52,15 +52,18 @@ variable "ami-nginx" {
 }
 
 variable "nginx-alb-tgt" {
+  type        = string
   description = "nginx reverse proxy target group"
 }
 
 variable "wordpress-alb-tgt" {
+  type        = string
   description = "wordpress target group"
 }
 
 
 variable "tooling-alb-tgt" {
+  type        = string
   description = "tooling target group"
 }
 

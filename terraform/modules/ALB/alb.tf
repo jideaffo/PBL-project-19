@@ -44,7 +44,7 @@ resource "aws_lb_listener" "nginx-listner" {
   load_balancer_arn = aws_lb.ext-alb.arn
   port              = 443
   protocol          = "HTTPS"
-  certificate_arn   = aws_acm_certificate_validation.project_19_validation.certificate_arn
+  certificate_arn   = aws_acm_certificate_validation.jidetech.certificate_arn
 
   default_action {
     type             = "forward"
@@ -70,7 +70,7 @@ resource "aws_lb" "ialb" {
     tags = merge(
     var.tags,
     {
-      Name = "ACS-int-alb"
+      Name = "JJ-int-alb"
     },
   )
 
@@ -128,7 +128,7 @@ resource "aws_lb_listener" "web-listener" {
   load_balancer_arn = aws_lb.ialb.arn
   port              = 443
   protocol          = "HTTPS"
-  certificate_arn   = aws_acm_certificate_validation.project_19_validation.certificate_arn
+  certificate_arn   = aws_acm_certificate_validation.jidetech.certificate_arn
 
 
   default_action {
@@ -137,7 +137,7 @@ resource "aws_lb_listener" "web-listener" {
   }
 }
 
-# # listener rule for tooling target
+# listener rule for tooling target
 
 resource "aws_lb_listener_rule" "tooling-listener" {
   listener_arn = aws_lb_listener.web-listener.arn
@@ -150,21 +150,7 @@ resource "aws_lb_listener_rule" "tooling-listener" {
 
   condition {
     host_header {
-      values = ["tooling.david.toolingabby.com"]
+      values = ["tooling.jidetech.tk"]
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

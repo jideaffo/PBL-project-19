@@ -1,32 +1,28 @@
 output "ALB-sg" {
-  value = aws_security_group.ACS["ext-alb-sg"].id
+  value = aws_security_group.JJ["ext-alb-sg"].id
 }
 
 
 output "IALB-sg" {
-  value = aws_security_group.ACS["int-alb-sg"].id
+  value = aws_security_group.JJ["int-alb-sg"].id
 }
 
 
 output "bastion-sg" {
-  value = aws_security_group.ACS["bastion-sg"].id
+  value = aws_security_group.JJ["bastion-sg"].id
 }
 
 
 output "nginx-sg" {
-  value = aws_security_group.ACS["nginx-sg"].id
+  value = aws_security_group.JJ["nginx-sg"].id
 }
 
 
 output "web-sg" {
-  value = aws_security_group.ACS["webserver-sg"].id
+  value = aws_security_group.JJ["webserver-sg"].id
 }
 
 
 output "datalayer-sg" {
-  value = aws_security_group.ACS["datalayer-sg"].id
-}
-
-output "compute-sg" {
-  value = aws_security_group.ACS["compute-sg"].id
+  value = aws_security_group.JJ["datalayer-sg"].id
 }

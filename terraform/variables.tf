@@ -1,5 +1,6 @@
+# Variables
 variable "region" {
-  default = "eu-west-1"
+  default = "us-east-1"
 }
 
 variable "vpc_cidr" {
@@ -23,18 +24,16 @@ variable "enable_classiclink_dns_support" {
 }
 
 variable "preferred_number_of_public_subnets" {
-  type        = number
-  description = "Number of public subnets"
+  default = 2
 }
 
 variable "preferred_number_of_private_subnets" {
-  type        = number
-  description = "Number of private subnets"
+  default = 2
 }
 
 variable "name" {
   type    = string
-  default = "ACS"
+  default = "JJ"
 
 }
 
@@ -44,51 +43,28 @@ variable "tags" {
   default     = {}
 }
 
-variable "environment" {
+
+variable "ami" {
+  description = "ami id for launch template."
   type        = string
-  description = "Enviroment"
-}
-
-variable "ami-bastion" {
-  type        = string
-  description = "AMI ID for the launch template"
-}
-
-
-variable "ami-web" {
-  type        = string
-  description = "AMI ID for the launch template"
-}
-
-
-variable "ami-nginx" {
-  type        = string
-  description = "AMI ID for the launch template"
-}
-
-
-variable "ami-sonar" {
-  type        = string
-  description = "AMI ID for the launch template"
-}
-
-variable "keypair" {
-  type        = string
-  description = "key pair for the instances"
 }
 
 variable "account_no" {
   type        = number
-  description = "the account number"
+  description = "Account number"
 }
 
+variable "keypair" {
+  description = " key pair for ec2 instance."
+  type        = string
+}
 
 variable "master-username" {
+  description = " Username name for RDS"
   type        = string
-  description = "RDS admin username"
 }
 
 variable "master-password" {
+  description = " Passwd for RDS."
   type        = string
-  description = "RDS master password"
 }

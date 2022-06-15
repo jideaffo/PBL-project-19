@@ -1,4 +1,3 @@
-
 variable "region" {
 }
 
@@ -46,11 +45,9 @@ variable "tags" {
 
 variable "name" {
   type    = string
-  default = "ACS"
+  default = "JJ"
 
 }
 variable "environment" {
   default = "true"
 }
-
-
