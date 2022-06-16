@@ -33,3 +33,21 @@ resource "aws_instance" "sonbarqube" {
     },
   )
 }
+
+# create instance for artifactory
+resource "aws_instance" "artifactory" {
+  ami                         = var.ami-jfrog
+  instance_type               = "t2.medium"
+  subnet_id                   = var.subnets-compute
+  vpc_security_group_ids      = var.sg-compute
+  associate_public_ip_address = true
+  key_name                    = var.keypair
+
+
+  tags = merge(
+    var.tags,
+    {
+      Name = "JJ-artifactory"
+    },
+  )
+}
